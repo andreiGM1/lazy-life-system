@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Lazy Life™ — Panoul Tău de Automatizare Personală & Venituri Pasive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="brand">
+        <span class="brand-badge">⚡ AUTOMATED LIFESTYLE OS</span>
+        <h1>Project <span class="gold-gradient">Lazy Life™</span></h1>
+        <p class="subtitle">Sistemul tău inteligent de automatizare a vieții: afaceri pe pilot automat, alimentație curată și timp liber maxim.</p>
+      </div>
+      <div class="header-status">
+        <div class="status-pill online">
+          <span class="pulse-dot"></span> Agenți AI: 4 Activi
+        </div>
+        <div class="date-badge" id="currentDateDisplay">Duminică, 11 Octombrie 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    
+    <!-- KPI Row -->
+    <section class="kpi-row">
+      <div class="kpi-card">
+        <span class="kpi-label">Venit Lunar Pasiv / Retainere</span>
+        <div class="kpi-val" id="kpiRevenue">12.450 RON</div>
+        <span class="kpi-sub">↗ +18% față de luna trecută</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Ore Economisite / Săptămână</span>
+        <div class="kpi-val text-green" id="kpiSavedHours">34 ore</div>
+        <span class="kpi-sub">Prin scripturi și agenți AI</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Proiecte Active pe Autopilot</span>
+        <div class="kpi-val" id="kpiActiveProjects">10 site-uri</div>
+        <span class="kpi-sub">0 erori de sistem</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Scor Vitalitate & Sănătate</span>
+        <div class="kpi-val text-gold" id="kpiVitality">94 / 100</div>
+        <span class="kpi-sub">Alimentație curată & mișcare</span>
+      </div>
+    </section>
+
+    <!-- Main Grid -->
+    <div class="modules-grid">
+      
+      <!-- Module 1: AI Agent Fleet Control -->
+      <div class="card module-card">
+        <div class="card-header">
+          <h3>🤖 Flota de Agenți AI Autonomi</h3>
+          <span class="card-badge">Antigravity SDK</span>
+        </div>
+        <div class="agent-list">
+          <div class="agent-item">
+            <div class="agent-info">
+              <strong>Hermes Task Runner</strong>
+              <span>Gestionare automată To-Do Notion & priorități zilnice</span>
+            </div>
+            <span class="badge badge-success">Activ (La 30 min)</span>
+          </div>
+          <div class="agent-item">
+            <div class="agent-info">
+              <strong>LeadScout Prospector</strong>
+              <span>Scanare Google Maps firme locale & analiză site-uri</span>
+            </div>
+            <span class="badge badge-success">Activ (Zilnic)</span>
+          </div>
+          <div class="agent-item">
+            <div class="agent-info">
+              <strong>SiteGuardian Uptime</strong>
+              <span>Monitorizare viteză, 0 erori consolă & formulare active</span>
+            </div>
+            <span class="badge badge-success">100% Uptime</span>
+          </div>
+          <div class="agent-item">
+            <div class="agent-info">
+              <strong>Social Auto-Publisher</strong>
+              <span>Distribuire conținut TikTok, Reels & LinkedIn</span>
+            </div>
+            <span class="badge badge-warning">Programat 18:00</span>
+          </div>
+        </div>
+        <button id="btnRunAudit" class="btn btn-outline btn-block mt-3">⚡ Rulează Audit Instant Ecosistem</button>
+      </div>
+
+      <!-- Module 2: Smart Grocery & Kitchen Restock -->
+      <div class="card module-card">
+        <div class="card-header">
+          <h3>🥑 Listă Deșteaptă de Cumpărături & Hrană Curată</h3>
+          <span class="card-badge">Zero Risipă & Scraper Prețuri</span>
+        </div>
+        <div class="grocery-input-row">
+          <input type="text" id="groceryInput" placeholder="Adaugă aliment sănătos (ex: Nuci braziliene)...">
+          <button id="btnAddGrocery" class="btn btn-primary btn-sm">+ Adaugă</button>
+        </div>
+        <ul class="grocery-list" id="groceryList">
+          <!-- Populated dynamically -->
+        </ul>
+        
+        <!-- Live Supermarket Price Comparator Scraper -->
+        <div class="grocery-scraper-box" id="groceryScraperBox" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-top: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--gold-light);">🛒 Scraper Prețuri Supermarketuri (București/Constanța)</span>
+            <span class="badge badge-success" id="cheapestStoreBadge">Sezamo cel mai avantajos</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; font-size: 0.8rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+              <div style="color: var(--text-muted);">Sezamo Bio</div>
+              <strong id="priceSezamo" style="color: var(--success); font-size: 1rem;">118 RON</strong>
+              <div style="font-size: 0.7rem; color: var(--text-muted);">Livrare 3h</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+              <div style="color: var(--text-muted);">Freshful</div>
+              <strong id="priceFreshful" style="font-size: 1rem;">132 RON</strong>
+              <div style="font-size: 0.7rem; color: var(--text-muted);">Livrare 2h</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+              <div style="color: var(--text-muted);">Bringo Carrefour</div>
+              <strong id="priceBringo" style="font-size: 1rem;">145 RON</strong>
+              <div style="font-size: 0.7rem; color: var(--text-muted);">Personal shopper</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grocery-actions" style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button id="btnOrderDirect" class="btn btn-gold btn-sm">🛒 Comandă Coșul Cel Mai Ieftin</button>
+          <button id="btnEnableNotifications" class="btn btn-outline btn-sm">🔔 Notificări Restock Web</button>
+        </div>
+      </div>
+
+      <!-- Module 3: Retainer Income & Projects Health -->
+      <div class="card module-card">
+        <div class="card-header">
+          <h3>💎 Portofoliu Retainere & Venituri Pasive</h3>
+          <span class="card-badge">Stripe & Netopia</span>
+        </div>
+        <div class="project-mini-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Proiect</th>
+                <th>Model Venit</th>
+                <th>Sumă / Lună</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Aura Mamaia Nord</strong></td>
+                <td>Comision rezervări 15%</td>
+                <td>3.800 RON</td>
+                <td><span class="badge badge-success">Automat</span></td>
+              </tr>
+              <tr>
+                <td><strong>RentoUtilaj</strong></td>
+                <td>Abonament platformă SaaS</td>
+                <td>2.400 RON</td>
+                <td><span class="badge badge-success">Activ</span></td>
+              </tr>
+              <tr>
+                <td><strong>Stardust Florals</strong></td>
+                <td>Comision afiliere 10%</td>
+                <td>2.750 RON</td>
+                <td><span class="badge badge-success">Creștere</span></td>
+              </tr>
+              <tr>
+                <td><strong>Eternity Digital</strong></td>
+                <td>Vânzare pachete QR nuntă</td>
+                <td>1.990 RON</td>
+                <td><span class="badge badge-success">Activ</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mangeac Gazon</strong></td>
+                <td>Mentenanță & Abonamente</td>
+                <td>1.510 RON</td>
+                <td><span class="badge badge-success">Stabil</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Module 4: Vitality & Clean Habits Checklist -->
+      <div class="card module-card">
+        <div class="card-header">
+          <h3>🌿 Obiceiuri de Vitalitate Zilnică</h3>
+          <span class="card-badge">Daily Protocol</span>
+        </div>
+        <div class="habit-list" id="habitList">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Project Lazy Life™. Tehnologia muncește pentru tine, tu te bucuri de viață.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
